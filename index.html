@@ -5,64 +5,317 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./common.css" />
     <link rel="stylesheet" href="./style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body>
     <header id="header">
-      <h1 class="header__logo"></h1>
-      <div class="header__utils">
-        <div class="header__country-selector">
-          <button type="button" class="header__country-selector-button">
-            EN
-          </button>
-          <ul class="header__country-list">
-            <li>
-              <button type="button" class="header__country-item" value="en">
+      <div class="header__inner">
+        <a class="header__logo" href="index.html"></a>
+        <!--  -->
+        <div class="header__utils">
+          <div class="header__country-selector">
+            <button type="button" class="header__country-selector-button button--border">
+              <div class="icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 22C17.5228 22 22 17.5229 22 12C22 6.47716 17.5228 2 12 2C6.47715 2 2 6.47716 2 12C2 17.5229 6.47715 22 12 22Z"
+                    data-mode="stroke"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path d="M3 9H21" data-mode="stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M3 15H21" data-mode="stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path
+                    d="M12 2C14.5013 4.73836 15.9228 8.29204 16 12C15.9228 15.708 14.5013 19.2617 12 22C9.49872 19.2617 8.07725 15.708 8 12C8.07725 8.29204 9.49872 4.73836 12 2V2Z"
+                    data-mode="stroke"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <span class="header__country-selected">EN</span>
+            </button>
+            <div class="header__country-list">
+              <button type="button" class="header__country-item selected" value="en">
                 English
+                <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="40" viewBox="0,0,256,256">
+                    <g
+                      fill="#ffffff"
+                      fill-rule="nonzero"
+                      stroke="none"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-miterlimit="10"
+                      stroke-dasharray=""
+                      stroke-dashoffset="0"
+                      font-family="none"
+                      font-weight="none"
+                      font-size="none"
+                      text-anchor="none"
+                      style="mix-blend-mode: normal"
+                    >
+                      <g transform="scale(5.12,5.12)">
+                        <path
+                          d="M41.9375,8.625c-0.66406,0.02344 -1.27344,0.375 -1.625,0.9375l-18.8125,28.78125l-12.1875,-10.53125c-0.52344,-0.54297 -1.30859,-0.74609 -2.03125,-0.51953c-0.71875,0.22266 -1.25391,0.83203 -1.37891,1.57422c-0.125,0.74609 0.17578,1.49609 0.78516,1.94531l13.9375,12.0625c0.4375,0.37109 1.01563,0.53516 1.58203,0.45313c0.57031,-0.08594 1.07422,-0.41016 1.38672,-0.89062l20.09375,-30.6875c0.42969,-0.62891 0.46484,-1.44141 0.09375,-2.10547c-0.37109,-0.66016 -1.08594,-1.05469 -1.84375,-1.01953z"
+                        ></path>
+                      </g>
+                    </g>
+                  </svg>
+                </span>
+              </button>
+              <button type="button" class="header__country-item" value="ko">
+                Korea
+                <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="40" viewBox="0,0,256,256">
+                    <g
+                      fill="#ffffff"
+                      fill-rule="nonzero"
+                      stroke="none"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-miterlimit="10"
+                      stroke-dasharray=""
+                      stroke-dashoffset="0"
+                      font-family="none"
+                      font-weight="none"
+                      font-size="none"
+                      text-anchor="none"
+                      style="mix-blend-mode: normal"
+                    >
+                      <g transform="scale(5.12,5.12)">
+                        <path
+                          d="M41.9375,8.625c-0.66406,0.02344 -1.27344,0.375 -1.625,0.9375l-18.8125,28.78125l-12.1875,-10.53125c-0.52344,-0.54297 -1.30859,-0.74609 -2.03125,-0.51953c-0.71875,0.22266 -1.25391,0.83203 -1.37891,1.57422c-0.125,0.74609 0.17578,1.49609 0.78516,1.94531l13.9375,12.0625c0.4375,0.37109 1.01563,0.53516 1.58203,0.45313c0.57031,-0.08594 1.07422,-0.41016 1.38672,-0.89062l20.09375,-30.6875c0.42969,-0.62891 0.46484,-1.44141 0.09375,-2.10547c-0.37109,-0.66016 -1.08594,-1.05469 -1.84375,-1.01953z"
+                        ></path>
+                      </g>
+                    </g>
+                  </svg>
+                </span>
+              </button>
+              <button type="button" class="header__country-item" value="cn">
+                Chinas
+                <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="40" viewBox="0,0,256,256">
+                    <g
+                      fill="#ffffff"
+                      fill-rule="nonzero"
+                      stroke="none"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-miterlimit="10"
+                      stroke-dasharray=""
+                      stroke-dashoffset="0"
+                      font-family="none"
+                      font-weight="none"
+                      font-size="none"
+                      text-anchor="none"
+                      style="mix-blend-mode: normal"
+                    >
+                      <g transform="scale(5.12,5.12)">
+                        <path
+                          d="M41.9375,8.625c-0.66406,0.02344 -1.27344,0.375 -1.625,0.9375l-18.8125,28.78125l-12.1875,-10.53125c-0.52344,-0.54297 -1.30859,-0.74609 -2.03125,-0.51953c-0.71875,0.22266 -1.25391,0.83203 -1.37891,1.57422c-0.125,0.74609 0.17578,1.49609 0.78516,1.94531l13.9375,12.0625c0.4375,0.37109 1.01563,0.53516 1.58203,0.45313c0.57031,-0.08594 1.07422,-0.41016 1.38672,-0.89062l20.09375,-30.6875c0.42969,-0.62891 0.46484,-1.44141 0.09375,-2.10547c-0.37109,-0.66016 -1.08594,-1.05469 -1.84375,-1.01953z"
+                        ></path>
+                      </g>
+                    </g>
+                  </svg>
+                </span>
+              </button>
+              <button type="button" class="header__country-item" value="jp">
+                Japan
+                <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="40" viewBox="0,0,256,256">
+                    <g
+                      fill="#ffffff"
+                      fill-rule="nonzero"
+                      stroke="none"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-miterlimit="10"
+                      stroke-dasharray=""
+                      stroke-dashoffset="0"
+                      font-family="none"
+                      font-weight="none"
+                      font-size="none"
+                      text-anchor="none"
+                      style="mix-blend-mode: normal"
+                    >
+                      <g transform="scale(5.12,5.12)">
+                        <path
+                          d="M41.9375,8.625c-0.66406,0.02344 -1.27344,0.375 -1.625,0.9375l-18.8125,28.78125l-12.1875,-10.53125c-0.52344,-0.54297 -1.30859,-0.74609 -2.03125,-0.51953c-0.71875,0.22266 -1.25391,0.83203 -1.37891,1.57422c-0.125,0.74609 0.17578,1.49609 0.78516,1.94531l13.9375,12.0625c0.4375,0.37109 1.01563,0.53516 1.58203,0.45313c0.57031,-0.08594 1.07422,-0.41016 1.38672,-0.89062l20.09375,-30.6875c0.42969,-0.62891 0.46484,-1.44141 0.09375,-2.10547c-0.37109,-0.66016 -1.08594,-1.05469 -1.84375,-1.01953z"
+                        ></path>
+                      </g>
+                    </g>
+                  </svg>
+                </span>
               </button>
               <button type="button" class="header__country-item" value="en1">
                 English
+                <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="40" viewBox="0,0,256,256">
+                    <g
+                      fill="#ffffff"
+                      fill-rule="nonzero"
+                      stroke="none"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-miterlimit="10"
+                      stroke-dasharray=""
+                      stroke-dashoffset="0"
+                      font-family="none"
+                      font-weight="none"
+                      font-size="none"
+                      text-anchor="none"
+                      style="mix-blend-mode: normal"
+                    >
+                      <g transform="scale(5.12,5.12)">
+                        <path
+                          d="M41.9375,8.625c-0.66406,0.02344 -1.27344,0.375 -1.625,0.9375l-18.8125,28.78125l-12.1875,-10.53125c-0.52344,-0.54297 -1.30859,-0.74609 -2.03125,-0.51953c-0.71875,0.22266 -1.25391,0.83203 -1.37891,1.57422c-0.125,0.74609 0.17578,1.49609 0.78516,1.94531l13.9375,12.0625c0.4375,0.37109 1.01563,0.53516 1.58203,0.45313c0.57031,-0.08594 1.07422,-0.41016 1.38672,-0.89062l20.09375,-30.6875c0.42969,-0.62891 0.46484,-1.44141 0.09375,-2.10547c-0.37109,-0.66016 -1.08594,-1.05469 -1.84375,-1.01953z"
+                        ></path>
+                      </g>
+                    </g>
+                  </svg>
+                </span>
               </button>
-              <button type="button" class="header__country-item" value="en2">
-                English
+              <button type="button" class="header__country-item" value="ko1">
+                Korea
+                <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="40" viewBox="0,0,256,256">
+                    <g
+                      fill="#ffffff"
+                      fill-rule="nonzero"
+                      stroke="none"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-miterlimit="10"
+                      stroke-dasharray=""
+                      stroke-dashoffset="0"
+                      font-family="none"
+                      font-weight="none"
+                      font-size="none"
+                      text-anchor="none"
+                      style="mix-blend-mode: normal"
+                    >
+                      <g transform="scale(5.12,5.12)">
+                        <path
+                          d="M41.9375,8.625c-0.66406,0.02344 -1.27344,0.375 -1.625,0.9375l-18.8125,28.78125l-12.1875,-10.53125c-0.52344,-0.54297 -1.30859,-0.74609 -2.03125,-0.51953c-0.71875,0.22266 -1.25391,0.83203 -1.37891,1.57422c-0.125,0.74609 0.17578,1.49609 0.78516,1.94531l13.9375,12.0625c0.4375,0.37109 1.01563,0.53516 1.58203,0.45313c0.57031,-0.08594 1.07422,-0.41016 1.38672,-0.89062l20.09375,-30.6875c0.42969,-0.62891 0.46484,-1.44141 0.09375,-2.10547c-0.37109,-0.66016 -1.08594,-1.05469 -1.84375,-1.01953z"
+                        ></path>
+                      </g>
+                    </g>
+                  </svg>
+                </span>
               </button>
-              <button type="button" class="header__country-item" value="en3">
-                English
+              <button type="button" class="header__country-item" value="cn1">
+                Chinas
+                <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="40" viewBox="0,0,256,256">
+                    <g
+                      fill="#ffffff"
+                      fill-rule="nonzero"
+                      stroke="none"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-miterlimit="10"
+                      stroke-dasharray=""
+                      stroke-dashoffset="0"
+                      font-family="none"
+                      font-weight="none"
+                      font-size="none"
+                      text-anchor="none"
+                      style="mix-blend-mode: normal"
+                    >
+                      <g transform="scale(5.12,5.12)">
+                        <path
+                          d="M41.9375,8.625c-0.66406,0.02344 -1.27344,0.375 -1.625,0.9375l-18.8125,28.78125l-12.1875,-10.53125c-0.52344,-0.54297 -1.30859,-0.74609 -2.03125,-0.51953c-0.71875,0.22266 -1.25391,0.83203 -1.37891,1.57422c-0.125,0.74609 0.17578,1.49609 0.78516,1.94531l13.9375,12.0625c0.4375,0.37109 1.01563,0.53516 1.58203,0.45313c0.57031,-0.08594 1.07422,-0.41016 1.38672,-0.89062l20.09375,-30.6875c0.42969,-0.62891 0.46484,-1.44141 0.09375,-2.10547c-0.37109,-0.66016 -1.08594,-1.05469 -1.84375,-1.01953z"
+                        ></path>
+                      </g>
+                    </g>
+                  </svg>
+                </span>
               </button>
-              <button type="button" class="header__country-item" value="en4">
-                English
+              <button type="button" class="header__country-item" value="jp1">
+                Japan
+                <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="40" viewBox="0,0,256,256">
+                    <g
+                      fill="#ffffff"
+                      fill-rule="nonzero"
+                      stroke="none"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-miterlimit="10"
+                      stroke-dasharray=""
+                      stroke-dashoffset="0"
+                      font-family="none"
+                      font-weight="none"
+                      font-size="none"
+                      text-anchor="none"
+                      style="mix-blend-mode: normal"
+                    >
+                      <g transform="scale(5.12,5.12)">
+                        <path
+                          d="M41.9375,8.625c-0.66406,0.02344 -1.27344,0.375 -1.625,0.9375l-18.8125,28.78125l-12.1875,-10.53125c-0.52344,-0.54297 -1.30859,-0.74609 -2.03125,-0.51953c-0.71875,0.22266 -1.25391,0.83203 -1.37891,1.57422c-0.125,0.74609 0.17578,1.49609 0.78516,1.94531l13.9375,12.0625c0.4375,0.37109 1.01563,0.53516 1.58203,0.45313c0.57031,-0.08594 1.07422,-0.41016 1.38672,-0.89062l20.09375,-30.6875c0.42969,-0.62891 0.46484,-1.44141 0.09375,-2.10547c-0.37109,-0.66016 -1.08594,-1.05469 -1.84375,-1.01953z"
+                        ></path>
+                      </g>
+                    </g>
+                  </svg>
+                </span>
               </button>
-            </li>
-          </ul>
-        </div>
-        <div class="header__login-utils">
-          <a href="#" class="header__login-button button--bordered">Log in</a>
-          <a href="#" class="header__sign-up-button button--primary">Sign up</a>
+            </div>
+            <!-- <select class="header__country-real-selector">
+              <option value="en"></option>
+              <option value="ko"></option>
+              <option value="cn"></option>
+              <option value="jp"></option>
+              <option value="en"></option>
+              <option value="ko"></option>
+              <option value="cn"></option>
+              <option value="jp"></option>
+            </select> -->
+          </div>
+          <div class="header__login-utils">
+            <a href="#" class="header__login-button button--border">Log in</a>
+            <a href="#" class="header__sign-up-button button--primary">Sign up</a>
+          </div>
         </div>
       </div>
     </header>
     <main id="main" class="main-page">
       <!-- 메인 비쥬얼 -->
       <section class="main__visual">
-        <h2 class="main__title">
-          One app<br />
-          for all needs
-        </h2>
-        <div class="main__visual-content">
-          <p class="main__sub-title">Single account for all your payments.</p>
-          <div class="main__app-links">
-            <a href="#" class="main__app-link main__app-link--appstore"
-              >App Store</a
-            >
-            <a href="#" class="main__app-link main__app-link--googleplay"
-              >Google Play</a
-            >
+        <!-- src="https://jetonbucket.fra1.cdn.digitaloceanspaces.com/jeton/2024-08-08T10-52-53.656Z-jeton-homepage-mobile2.mp4#t=0.01" -->
+        <!-- <video
+          src="https://jetonbucket.fra1.cdn.digitaloceanspaces.com/jeton/2024-08-08T10-52-41.402Z-jeton-homepage-hd2.mp4#t=0.01"
+          type="video/mp4"
+          loop
+          muted
+          playsinline
+          autoplay
+        ></video> -->
+        <div class="main__inner">
+          <h2 class="main__title">
+            One app<br />
+            for all needs
+          </h2>
+          <div class="main__visual-content">
+            <p class="main__sub-title">Single account for all your payments.</p>
+            <div class="main__app-links">
+              <a href="#" class="main__app-link main__app-link--appstore">App Store</a>
+              <a href="#" class="main__app-link main__app-link--googleplay">Google Play</a>
+            </div>
           </div>
         </div>
         <button type="button" class="main__scroll-button">Scroll</button>
@@ -77,34 +330,19 @@
 
         <ul class="main__gallray-list">
           <li>
-            <img
-              src="https://www.jeton.com/_ipx/q_90&w_425/cms/25fbb354a9e33cb07ea84c40eab7f16b9ec0b84a-660x660.png"
-              alt=""
-            />
+            <img src="https://www.jeton.com/_ipx/q_90&w_425/cms/25fbb354a9e33cb07ea84c40eab7f16b9ec0b84a-660x660.png" alt="" />
           </li>
           <li>
-            <img
-              src="https://www.jeton.com/_ipx/q_90&w_425/cms/b1542520ec11564d8a0e1c995b8d98235dfd97c3-660x684.png"
-              alt=""
-            />
+            <img src="https://www.jeton.com/_ipx/q_90&w_425/cms/b1542520ec11564d8a0e1c995b8d98235dfd97c3-660x684.png" alt="" />
           </li>
           <li>
-            <img
-              src="https://www.jeton.com/_ipx/q_90&w_425/cms/633e0fd8c443a6124a232d42ad11c20cc078d65c-600x500.png"
-              alt=""
-            />
+            <img src="https://www.jeton.com/_ipx/q_90&w_425/cms/633e0fd8c443a6124a232d42ad11c20cc078d65c-600x500.png" alt="" />
           </li>
           <li>
-            <img
-              src="https://www.jeton.com/_ipx/q_90&w_425/cms/0246deb44de262e2d472307e9ccc3de126c5b39b-660x627.png"
-              alt=""
-            />
+            <img src="https://www.jeton.com/_ipx/q_90&w_425/cms/0246deb44de262e2d472307e9ccc3de126c5b39b-660x627.png" alt="" />
           </li>
           <li>
-            <img
-              src="https://www.jeton.com/_ipx/q_90&w_425/cms/58416ce3a15f3a122d9b24cfafefb57b77c3c104-720x720.png"
-              alt=""
-            />
+            <img src="https://www.jeton.com/_ipx/q_90&w_425/cms/58416ce3a15f3a122d9b24cfafefb57b77c3c104-720x720.png" alt="" />
           </li>
         </ul>
       </section>
@@ -114,47 +352,17 @@
         <ul class="main__info-list">
           <li>
             <figure class="main__info-icon">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 4V20"
-                  data-mode="stroke"
-                  stroke-width="1.5"
-                  stroke-linecap="square"
-                  transform-origin="12 12"
-                ></path>
-                <path
-                  d="M20 12L4 12"
-                  data-mode="stroke"
-                  stroke-width="1.5"
-                  stroke-linecap="square"
-                  transform-origin="12 12"
-                ></path>
-                <path
-                  d="M20 12L4 12"
-                  data-mode="stroke"
-                  stroke-width="1.5"
-                  stroke-linecap="square"
-                  transform-origin="12 12"
-                ></path>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 4V20" data-mode="stroke" stroke-width="1.5" stroke-linecap="square" transform-origin="12 12"></path>
+                <path d="M20 12L4 12" data-mode="stroke" stroke-width="1.5" stroke-linecap="square" transform-origin="12 12"></path>
+                <path d="M20 12L4 12" data-mode="stroke" stroke-width="1.5" stroke-linecap="square" transform-origin="12 12"></path>
               </svg>
             </figure>
             <span class="main__info-text">Add</span>
           </li>
           <li>
             <figure class="main__info-icon">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -167,13 +375,7 @@
           </li>
           <li>
             <figure class="main__info-icon">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -208,12 +410,8 @@
         </div>
 
         <div class="main__app-links">
-          <a href="#" class="main__app-link main__app-link--appstore"
-            >App Store</a
-          >
-          <a href="#" class="main__app-link main__app-link--googleplay"
-            >Google Play</a
-          >
+          <a href="#" class="main__app-link main__app-link--appstore">App Store</a>
+          <a href="#" class="main__app-link main__app-link--googleplay">Google Play</a>
         </div>
       </section>
 
@@ -249,8 +447,7 @@
         </h2>
 
         <p>
-          *The displayed conversion rates and fees may vary during the currency
-          exchange<br />
+          *The displayed conversion rates and fees may vary during the currency exchange<br />
           process, and the rates shown were last updated at 08:59 on 05.01.2025.
         </p>
 
@@ -264,36 +461,28 @@
           <li class="main__clients-card">
             <p>Recommended</p>
             <p>
-              Very happy with the app. Does what it says, simple payments and
-              transactions. Quick account verification and withdrawals. 24/7
-              support available.
+              Very happy with the app. Does what it says, simple payments and transactions. Quick account verification and withdrawals. 24/7 support available.
             </p>
             <div><span>VK</span><span>Vamsi K.</span></div>
           </li>
           <li class="main__clients-card">
             <p>Recommended</p>
             <p>
-              Very happy with the app. Does what it says, simple payments and
-              transactions. Quick account verification and withdrawals. 24/7
-              support available.
+              Very happy with the app. Does what it says, simple payments and transactions. Quick account verification and withdrawals. 24/7 support available.
             </p>
             <div><span>VK</span><span>Vamsi K.</span></div>
           </li>
           <li class="main__clients-card">
             <p>Recommended</p>
             <p>
-              Very happy with the app. Does what it says, simple payments and
-              transactions. Quick account verification and withdrawals. 24/7
-              support available.
+              Very happy with the app. Does what it says, simple payments and transactions. Quick account verification and withdrawals. 24/7 support available.
             </p>
             <div><span>VK</span><span>Vamsi K.</span></div>
           </li>
           <li class="main__clients-card">
             <p>Recommended</p>
             <p>
-              Very happy with the app. Does what it says, simple payments and
-              transactions. Quick account verification and withdrawals. 24/7
-              support available.
+              Very happy with the app. Does what it says, simple payments and transactions. Quick account verification and withdrawals. 24/7 support available.
             </p>
             <div><span>VK</span><span>Vamsi K.</span></div>
           </li>
@@ -307,19 +496,15 @@
           <p>It only takes few seconds to get started.</p>
 
           <div class="main__app-links">
-            <a href="#" class="main__app-link main__app-link--appstore"
-              >App Store</a
-            >
-            <a href="#" class="main__app-link main__app-link--googleplay"
-              >Google Play</a
-            >
+            <a href="#" class="main__app-link main__app-link--appstore">App Store</a>
+            <a href="#" class="main__app-link main__app-link--googleplay">Google Play</a>
           </div>
         </div>
       </section>
     </main>
-    <aside id="sidebar">
-      <a href="#" class="sidebar-link"></a>
-    </aside>
+    <nav id="navbar">
+      <a href="#" class="navbar-link"></a>
+    </nav>
 
     <footer id="footer"></footer>
   </body>
