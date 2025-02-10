@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Inter", serif;
-  src: local("Inter"), url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+  src: local("Inter"),
+    url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
   font-weight: 900;
   font-display: swap;
   unicode-range: U+AC00-D7A3;
@@ -8,7 +9,10 @@
 
 :root {
   --col__main: #f73b20;
+  --scroll-direction: 1;
+  interpolate-size: allow-keywords; /* 👈 */
 }
+
 body {
   position: relative;
   width: 100%;
@@ -74,6 +78,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 .header__country-selector-button {
 }
 
@@ -92,23 +97,38 @@ body {
   top: calc(100% + 0.5rem);
   left: 0;
   width: fit-content;
-  height: calc(auto);
+  height: 0;
   max-height: max(240px, 33vh);
   background-color: #fff;
-  padding: 0.5rem;
+
   overflow-y: scroll;
   border-radius: 1rem;
+  transition: height 1s ease;
 }
+.header__country-list-inner {
+  padding: 0.5rem;
+}
+.header__country-selector.active .header__country-list {
+  /* height: calc(auto); */
+  height: auto;
+  /* height: calc-size(min-content, size); */
+  /* height: max-content; */
+}
+
 .header__country-item {
   display: flex;
   align-items: center;
   min-width: 15rem;
   width: 100%;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   font-size: 1.6rem;
   border-radius: 1rem;
   gap: 2rem;
+}
+
+.header__country-item + .header__country-item {
+  margin-top: 0.5rem;
 }
 .header__country-item > .icon {
   flex-shrink: 0;
@@ -148,6 +168,7 @@ body {
   letter-spacing: 0;
   line-height: 1;
   color: #fff;
+  font-weight: 700;
 }
 
 .main__inner {
@@ -167,6 +188,163 @@ body {
   align-items: flex-end;
   padding: 7vw 3vw;
 }
+.main__visual-content {
+  padding-left: 5rem;
+}
+.main__sub-title {
+  font-size: clamp(19px, 17.518px + 100vw * 0.0038, 24px);
+  line-height: 1;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+.main__app-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.main__app-link {
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+.main__gallray {
+  position: relative;
+  height: 300vh; /* 스크롤을 길게 만듦 */
+  scroll-behavior: smooth;
+}
+
+.main__gallray-inner {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  border: 2px solid yellow;
+}
+
+.main__gallray .main__title {
+  color: var(--col__main);
+  padding-bottom: 0.5em;
+  transform-origin: center center;
+  animation: scaled linear both;
+  animation-timeline: scroll();
+  animation-range: entry 25% cover 50%;
+}
+
+/* 갤러리 리스트 스타일 */
+.main__gallray-list {
+  /* position: relative;
+  width: 100%;
+  height: 100vh; */
+}
+
+.main__gallray-list > li {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  transition: transform 2s ease-in-out;
+  animation: gather linear both;
+  animation-timeline: scroll();
+  animation-range: entry 40% cover 100%;
+  /* animation-composition: add; */
+  /* animation-composition: accumulate; */
+}
+
+/* 개별 리스트 초기 위치 */
+.main__gallray-list > li:nth-child(1) {
+  left: -19%;
+  top: 6%;
+  padding: 0 0 20px 0;
+}
+.main__gallray-list > li:nth-child(2) {
+  left: 83%;
+  top: -3%;
+  padding: 0 20px 0 0;
+}
+.main__gallray-list > li:nth-child(3) {
+  left: 86%;
+  top: 100%;
+  padding: 20px 0 0 0;
+}
+.main__gallray-list > li:nth-child(4) {
+  left: 31%;
+  top: 100%;
+  padding: 0 0 0 20px;
+}
+.main__gallray-list > li:nth-child(5) {
+  left: -1%;
+  top: 37%;
+  transform: translate(0, 0);
+  padding: 20px 20px 0 0;
+}
+
+/* 중앙으로 모이는 애니메이션 */
+@keyframes gather {
+  from {
+    transform: inherit;
+  }
+  to {
+    transform: translate(-50%, -50%);
+    top: unset;
+    left: unset;
+    bottom: unset;
+    right: unset;
+    left: 50%;
+    top: 50%;
+  }
+}
+@keyframes gather2 {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+  }
+}
+
+/* 제목 확대 애니메이션 */
+@keyframes scaled {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(0.7);
+  }
+}
+@keyframes reveal {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moving {
+  from {
+    top: inherit;
+    bottom: inherit;
+    left: inherit;
+    right: inherit;
+  }
+  to {
+    top: unset;
+    bottom: unset;
+    left: unset;
+    right: unset;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 @media only screen and (min-width: 2000px) {
   /* .header__country-selector-button {
     font-size: 0.8vw;
